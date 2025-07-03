@@ -1,0 +1,9 @@
+services:
+  dasa-stock-db:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=dasa
+      - POSTGRES_PASSWORD=dasa
+      - POSTGRES_DB=stock

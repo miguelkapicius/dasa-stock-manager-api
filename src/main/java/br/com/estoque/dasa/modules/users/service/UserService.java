@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class UserService {
     private final UserRepository repository;
 
@@ -16,6 +15,10 @@ public class UserService {
     }
 
     public List<User> listAll() {
-        return repository.findAll();
+        return this.repository.findAll();
+    }
+
+    public User create (User user){
+        return this.repository.save(user);
     }
 }

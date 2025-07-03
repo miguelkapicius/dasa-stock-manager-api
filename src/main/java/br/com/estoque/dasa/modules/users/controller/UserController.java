@@ -2,9 +2,7 @@ package br.com.estoque.dasa.modules.users.controller;
 
 import br.com.estoque.dasa.modules.users.entity.User;
 import br.com.estoque.dasa.modules.users.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,4 +20,8 @@ public class UserController {
         return this.service.listAll();
     };
 
+    @PostMapping
+    public User create(@RequestBody User user) {
+        return this.service.create(user);
+    }
 }
